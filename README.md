@@ -22,6 +22,8 @@ If you want to keep up with changes to these skills, and any new ones I create, 
 
 ## Quickstart (30-second setup)
 
+### Claude Code
+
 1. Run the skills.sh installer:
 
 ```bash
@@ -36,6 +38,36 @@ npx skills@latest add mattpocock/skills
    - Ask you where you want to save any docs we create
 
 4. Bam - you're ready to go.
+
+### OpenCode
+
+OpenCode can read the same `SKILL.md` format. To install the daily-use skills
+into OpenCode's global skill directory:
+
+```bash
+./scripts/install-opencode-skills.sh
+```
+
+This copies the `engineering` and `productivity` skill buckets to
+`~/.config/opencode/skills` and writes ownership markers so uninstall is
+deterministic. Misc skills are intentionally excluded by default to keep
+OpenCode's skill list focused.
+
+To include the misc skills too:
+
+```bash
+./scripts/install-opencode-skills.sh --include-misc
+```
+
+To uninstall:
+
+```bash
+./scripts/uninstall-opencode-skills.sh
+```
+
+Use `--dest DIR` or `OPENCODE_SKILLS_DIR=DIR` to target a different OpenCode
+skills directory. Use `--force` only when you intentionally want to replace or
+remove existing skills with the same names.
 
 ## Why These Skills Exist
 
